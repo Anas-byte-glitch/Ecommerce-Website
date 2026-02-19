@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== GOOGLE FONTS ===============-->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="sidebar/cartside.css">
+    <link rel="stylesheet" href="sidebar/sidebar.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>BOUTIQUE - STORE</title>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">                                        
+        <nav class="nav">
+            <!--Togel  Button-->
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <a href="index.html" class="nav-logo">BOUTIQUE</a>
+
+            <div class="nav-list-1">
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link active-link">Accueil</a>
+                </div>
+                <div class="nav-item">
+                    <a href="store.html" class="nav-link">المتجر</a>
+                </div>
+            </div>
+
+            <div class="nav-list-2">
+                <div class="nav-item">
+                    <a href="#" class="seConnecter seConnecter-js">Se Connecter / S'Inscrire</a>
+                </div>
+                <div class="nav-item">
+                    <div class="search-container">
+                        <a href="#" class="search"><i class="ri-search-line"></i></a>
+                        <div class="search-dropdown">
+                            <input type="text" placeholder="Rechercher..." id="search-input-1">
+                            <button id="search-btn-1"><i class="ri-search-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="cart">
+                        <i class="ri-shopping-cart-line"><span class="quantity js-cart-quantity">0</span></i>
+                        <span id="price">0.00 DA</span>
+                    </a>
+                </div>
+            </div> 
+        </nav>
+    </header>
+    
+    <aside>
+        <div class="side-bar" id="side-bar">
+            <div class="menu">
+                <div class="item">
+                    <input type="text" id="search-input" placeholder="Rechercher...">
+                    <button id="search-btn"><i class="ri-search-line"></i></button>
+                </div>
+                <div class="item">
+                    <a href="#" class="sub-btn" id="sub-btn">CATÉGORIES<i class="ri-arrow-right-s-line dropdown-icon"></i></a>
+                    <div class="sub-menu" id="sub-menu">
+                        <a href="#" class="sub-item">ABAYA</a>
+                        <a href="#" class="sub-item">ENSEMBLE</a>
+                        <a href="#" class="sub-item">ROBE</a>
+                        <a href="#" class="sub-item">طقم الصلاة</a>
+                    </div>
+                </div>
+                <div class="item"><a href="#home">Accueil</a></div>
+                <div class="item"><a href="store.html">المتجر</a></div>
+                <div class="item seConnecter-js"><a href="#"><i class="ri-user-line"></i> Se Connecter / S'Inscrire</a></div>
+            </div>
+        </div>
+    </aside>
+
+    <!--========== CART DRAWER ==========-->
+    <aside>
+        <div class="cart-drawer" id="cart-drawer">
+
+            <div class="cart-header">
+                <h3>Panier</h3>
+                <button class="cart-close" id="cart-close">✕ Fermer</button>
+            </div>
+
+            <div class="cart-items js-cart-items">
+                <!-- Item -->
+            </div>
+
+            <div class="cart-footer js-cart-footer">
+                <div class="subtotal">
+                <span>Subtotal:</span>
+                <strong class="js-subtotal-price">0 DA</strong>
+                </div>
+
+                <a href="chekout.html" class="view-cart">VIEW CART</a>
+                <a href="chekoutInfo.html" class="checkout">CHECKOUT</a>
+            </div>
+        </div>
+    </aside>
+
+    <!--================== LOGIN =============-=====-->
+    <!-- LOGIN SIDEBAR -->
+    <aside class="login-sidebar" id="login-sidebar">
+        <div class="login-header">
+            <h3>Se Connecter</h3>
+            <button class="login-close" id="login-close">✕</button>
+        </div>
+
+        <form class="login-form" id="login-form">
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Entrez votre email" required>
+            </div>
+
+            <!-- Password with show/hide -->
+            <div class="form-group password-group">
+                <label for="password">Mot de passe:</label>
+                <input type="password" id="password" placeholder="Entrez votre mot de passe" required>
+                <button type="button" class="toggle-password" id="toggle-password">
+                    <i class="ri-eye-line"></i>
+                </button>
+            </div>
+
+            <button type="submit" class="login-btn">Se Connecter</button>
+            <p class="login-footer">Pas encore de compte? <a href="signup.html">S'inscrire</a></p>
+        </form>
+    </aside>
+
+
+
+    <!--==================== MAIN ====================-->
+    <main class="main-accueil">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <!-- Swiper START -->
+            <div class="slider">
+                <div class="slides">
+
+                    <div class="slide active">
+                        <img src="photos/p1.jpg" loading="lazy">
+                        <div class="slide-content">
+                            <h2>Nouvelle Collection 2024</h2>
+                            <p>Découvrez nos dernières tendances et styles.</p>
+                            <a href="store.html" class="btn">Shop Now</a>
+                        </div>
+                    </div>
+
+                    <div class="slide">
+                        <img src="photos/p2.jpg" loading="lazy">
+                        <div class="slide-content">
+                            <h2>Offres Spéciales</h2>
+                            <p>Profitez de réductions exclusives.</p>
+                            <a href="store.html" class="btn">Shop Now</a>
+                        </div>
+                    </div>
+
+                    <div class="slide">
+                        <img src="photos/p3.jpg" loading="lazy">
+                        <div class="slide-content">
+                            <h2>Livraison Gratuite</h2>
+                            <p>Dès 5000 DA d’achat.</p>
+                            <a href="store.html" class="btn">Shop Now</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="slider-nav"></div>
+            </div>
+            <!-- Swiper END -->
+        </section>
+
+        <!--==================== COLLECTION ====================-->
+        <section class="products section">
+            <h2 class="section__title">Our Products</h2>
+            <h3 class="section__subtitle">Hijabi</h3>
+
+            <div class="products-grid js-products-grid">
+                
+            </div>
+
+        </section>
+
+        <!--==================== MAP ====================-->
+        <section class="map" id="map">
+            <h4 class="section__subtitle">OUR LOCATION</h4>
+            <h2 class="section__title">Find Us On The Map</h2>
+
+            <div class="map-container container grid">
+
+                <div class="map-area">
+                    <img src="photos/map-img.png" alt="image" class="map-img" loading="lazy">
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d409175.935593504!2d2.7822201337322277!3d36.754083469546195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fb100182265b3%3A0x8644d36bf098715d!2sHicham%20cook%20pizza!5e0!3m2!1sen!2sdz!4v1762719056371!5m2!1sen!2sdz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div class="map-content grid">
+                    <div class="map-card">
+                        <h3 class="map-title">
+                            <i class="ri-map-pin-2-fill"></i>
+                            Location
+                        </h3>
+
+                        <address class="map-info">
+                            Algeria - Qoba <br> Av. Moon #4321
+                        </address>
+                    </div>
+
+                    <div class="map-card">
+                        <h3 class="map-title">
+                            <i class="ri-calendar-schedule-fill"></i>
+                            Schedule
+                        </h3>
+
+                        <address class="map-info">
+                            Monday - Sunday <br> 24/7
+                        </address>
+                    </div>
+
+                    <div class="map-card">
+                        <h3 class="map-title">
+                            <i class="ri-phone-fill"></i>
+                            Phones
+                        </h3>
+
+                        <address class="map-info">
+                            06-12345678 <br> 05-12345678
+                        </address>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- ========== BRAND INFO ========== -->
+            <div class="footer-brand">
+                <a href="#" class="footer-logo">BOUTIQUE</a>
+                <p class="footer-desc">
+                    Discover elegant collections made with love.<br>
+                    Style, quality & comfort.
+                </p>
+
+                <div class="footer-social">
+                    <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+                    <a href="#"><i class="ri-instagram-line"></i></a>
+                    <a href="#"><i class="ri-twitter-x-line"></i></a>
+                    <a href="#"><i class="ri-youtube-fill"></i></a>
+                </div>
+            </div>
+
+            <!-- ========== LINKS ========== -->
+            <div class="footer-links">
+                <div>
+                    <h3>Company</h3>
+                    <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Store</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Support</h3>
+                    <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ========== NEWSLETTER ========== -->
+            <div class="footer-newsletter">
+                <h3>Stay Connected</h3>
+                <p>Subscribe to receive exclusive offers.</p>
+
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email address">
+                    <button type="submit">
+                    <i class="ri-arrow-right-line"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <span class="footer-copy">
+            © 2026 BOUTIQUE — All rights reserved by <a target="_blank" href="https://anas-byte-glitch.github.io/Anas-FrontendDeveloper/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn0Cnsv9iTsr1eZikPJbaSrmgJsdRPRWYUBLHkWRVptcqGTMpZD9SuAMLxs48_aem__FcrQYQXjcou97tyCKEdWQ#home">
+                Anas
+            </a>
+        </span>
+    </footer>
+
+
+    <!-- overlay -->
+    <div class="page-overlay" id="page-overlay"></div>
+
+    <!--==================== SCROLL UP ====================-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+      
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src=""></script>
+      
+    <!--=============== SWIPER JS ===============-->
+
+    <!--=============== MAIN JS ===============-->
+    <script src="sidebar/sidebarLogin.js"></script>
+    <script src="sidebar/cartside.js" defer></script>
+    <script src="sidebar/sidebar.js" defer></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
