@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- CSS خاص بالـ checkout -->
+   <link rel="stylesheet" href="sidebar/sidebar.css">
+  <link rel="stylesheet" href="chekoutInfo/chekoutInfo.css">
+</head>
+<body>
+
+    <div class="overlay" id="overlay"></div>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">                                        
+        <nav class="nav">
+            <!--Togel  Button-->
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <a href="index.html" class="nav-logo">BOUTIQUE</a>
+
+            <div class="nav-list-1">
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link active-link">Accueil</a>
+                </div>
+                <div class="nav-item">
+                    <a href="store.html" class="nav-link">المتجر</a>
+                </div>
+            </div>
+
+            <div class="nav-list-2">
+                <div class="nav-item">
+                    <a href="#" class="seConnecter seConnecter-js">Se Connecter / S'Inscrire</a>
+                </div>
+                <div class="nav-item">
+                    <div class="search-container">
+                        <a href="#" class="search"><i class="ri-search-line"></i></a>
+                        <div class="search-dropdown">
+                            <input type="text" placeholder="Rechercher..." id="search-input-1">
+                            <button id="search-btn-1"><i class="ri-search-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="cart">
+                        <i class="ri-shopping-cart-line"><span class="quantity js-cart-quantity">0</span></i>
+                        <span id="price">0.00 DA</span>
+                    </a>
+                </div>
+            </div> 
+        </nav>
+    </header>
+    
+    <aside>
+        <div class="side-bar" id="side-bar">
+            <div class="menu">
+                <div class="item">
+                    <input type="text" id="search-input" placeholder="Rechercher...">
+                    <button id="search-btn"><i class="ri-search-line"></i></button>
+                </div>
+                <div class="item">
+                    <a href="#" class="sub-btn" id="sub-btn">CATÉGORIES<i class="ri-arrow-right-s-line dropdown-icon"></i></a>
+                    <div class="sub-menu" id="sub-menu">
+                        <a href="#" class="sub-item">ABAYA</a>
+                        <a href="#" class="sub-item">ENSEMBLE</a>
+                        <a href="#" class="sub-item">ROBE</a>
+                        <a href="#" class="sub-item">طقم الصلاة</a>
+                    </div>
+                </div>
+                <div class="item"><a href="index.html">Accueil</a></div>
+                <div class="item"><a href="store.html">المتجر</a></div>
+                <div class="item seConnecter-js"><a href="#"><i class="ri-user-line"></i> Se Connecter / S'Inscrire</a></div>
+            </div>
+        </div>
+    </aside>
+
+    <!--==================== MAIN ====================-->
+
+  <main class="checkout section">
+    <div class="checkout-container">
+
+      <!-- ================= BILLING ================= -->
+      <section class="billing">
+        <h2 class="checkout-title">Billing Details</h2>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Prénom *</label>
+            <input type="text">
+          </div>
+
+          <div class="form-group">
+            <label>Nom *</label>
+            <input type="text">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Pays / Région *</label>
+          <input type="text" value="Algeria" disabled>
+        </div>
+
+        <div class="form-group">
+          <label>Adresse *</label>
+          <input type="text">
+        </div>
+
+        <div class="form-group">
+          <label>Wilaya *</label>
+          <select>
+            <option>Adrar</option>
+            <option>Alger</option>
+            <option>Oran</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Téléphone *</label>
+          <input type="tel">
+        </div>
+      </section>
+
+      <!-- ================= ORDER ================= -->
+      <aside class="order">
+        <h2 class="checkout-title">Your Order</h2>
+
+        <div class="order-box">
+
+            <div class="order-row head">
+                <span>Product</span>
+                <span>Subtotal</span>
+            </div>
+
+            <!-- المنتجات هنا -->
+            <div id="order-items"></div>
+
+            <div class="order-row">
+                <strong>Subtotal</strong>
+                <strong id="order-subtotal">0 DA</strong>
+            </div>
+
+            <div class="order-row shipping">
+                <span>Shipping</span>
+                <span id="order-shipping">0 DA</span>
+            </div>
+
+            <div class="order-row total">
+                <span>Total</span>
+                <span id="order-total">0 DA</span>
+            </div>
+
+        </div>
+
+        <button class="place-order">Place Order</button>
+      </aside>
+
+    </div>
+  </main>
+
+  <script src="sidebar/sidebar.js" defer></script>
+  <script type="module" src="chekoutInfo/chekoutInfo.js"></script>
+</body>
+</html>

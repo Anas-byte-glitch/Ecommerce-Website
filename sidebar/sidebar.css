@@ -1,0 +1,118 @@
+/*=============== ASIDE BAR ===============*/
+
+.side-bar{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 290px;
+    height: 100%; 
+    background: var(--white-color);
+    transition: left .4s ease;
+    z-index: 1100;
+}
+.side-bar .menu{
+    width: 100%;
+    padding-top: 40px;
+    position: relative;
+}
+/*======== Search bar in side bar */
+
+.side-bar .menu .item:first-child{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 20px 15px;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.side-bar .menu .item #search-input{
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,.15);
+    font-size: var(--small-font-size);
+    outline: none;
+    background-color: #faf5fa;
+    transition: border .3s ease, box-shadow .3s ease;
+}
+
+.side-bar .menu .item #search-input::placeholder{
+    color: rgba(0,0,0,.45);
+}
+
+.side-bar .menu .item #search-input:focus{
+    border-color: var(--first-color);
+    box-shadow: 0 0 0 3px rgba(201,124,140,.25);
+}
+
+/*================= Search Button ===============*/
+#search-btn{
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    background-color: var(--first-color);
+    color: var(--white-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .3s ease, transform .2s ease;
+}
+
+#search-btn i{
+    font-size: 1.1rem;
+}
+
+#search-btn:hover{
+    background-color: var(--first-color-dark);
+    transform: scale(1.05);
+}
+
+.side-bar .menu .item a{
+    position: relative;
+    cursor: pointer;
+    display: block;
+    padding: 15px 30px;
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    transition: all .3s ease;
+}
+.side-bar .menu .item a:hover{
+    background-color: var(--first-color);
+    color: var(--white-color);
+}
+.side-bar .menu .item .sub-btn .dropdown-icon{
+    position: absolute;
+    right: 20px;
+    font-size: 1.2rem;
+    transition: transform .3s ease;
+}
+.side-bar .menu .item .sub-menu{
+    background: rgba(0,0,0,0.05);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: 
+        max-height .35s ease,
+        opacity .25s ease,
+        transform .25s ease;
+}
+.side-bar .menu .item .sub-menu a{
+    padding-left: 60px;
+    font-size: var(--small-font-size);
+}
+
+/*============== SHOW SIDE BAR ==================*/
+.show-side-bar{
+    left: 0;
+}
+.side-bar .menu .item .sub-menu.show-sub-menu{
+    max-height: 400px;
+    opacity: 1;
+    transform: translateY(0);
+}
+.sub-btn.active .dropdown-icon{
+    transform: rotate(-90deg);
+}

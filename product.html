@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== GOOGLE FONTS ===============-->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="sidebar/cartside.css">
+    <link rel="stylesheet" href="sidebar/sidebar.css">
+    <link rel="stylesheet" href="product/product.css">
+
+    <title>BOUTIQUE - STORE</title>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">                                        
+        <nav class="nav">
+            <!--Togel  Button-->
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <a href="index.html" class="nav-logo">BOUTIQUE</a>
+
+            <div class="nav-list-1">
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link active-link">Accueil</a>
+                </div>
+                <div class="nav-item">
+                    <a href="store.html" class="nav-link">المتجر</a>
+                </div>
+            </div>
+
+            <div class="nav-list-2">
+                <div class="nav-item">
+                    <a href="#" class="seConnecter seConnecter-js">Se Connecter / S'Inscrire</a>
+                </div>
+                <div class="nav-item">
+                    <div class="search-container">
+                        <a href="#" class="search"><i class="ri-search-line"></i></a>
+                        <div class="search-dropdown">
+                            <input type="text" placeholder="Rechercher..." id="search-input-1">
+                            <button id="search-btn-1"><i class="ri-search-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="cart">
+                        <i class="ri-shopping-cart-line"><span class="quantity js-cart-quantity">0</span></i>
+                        <span id="price">0.00 DA</span>
+                    </a>
+                </div>
+            </div> 
+        </nav>
+    </header>
+    
+    <aside>
+        <div class="side-bar" id="side-bar">
+            <div class="menu">
+                <div class="item">
+                    <input type="text" id="search-input" placeholder="Rechercher...">
+                    <button id="search-btn"><i class="ri-search-line"></i></button>
+                </div>
+                <div class="item">
+                    <a href="#" class="sub-btn" id="sub-btn">CATÉGORIES<i class="ri-arrow-right-s-line dropdown-icon"></i></a>
+                    <div class="sub-menu" id="sub-menu">
+                        <a href="#" class="sub-item">ABAYA</a>
+                        <a href="#" class="sub-item">ENSEMBLE</a>
+                        <a href="#" class="sub-item">ROBE</a>
+                        <a href="#" class="sub-item">طقم الصلاة</a>
+                    </div>
+                </div>
+                <div class="item"><a href="index.html">Accueil</a></div>
+                <div class="item"><a href="store.html">المتجر</a></div>
+                <div class="item seConnecter-js"><a href="#"><i class="ri-user-line"></i> Se Connecter / S'Inscrire</a></div>
+            </div>
+        </div>
+    </aside>
+
+    <!--========== CART DRAWER ==========-->
+    <aside>
+        <div class="cart-drawer" id="cart-drawer">
+
+            <div class="cart-header">
+                <h3>Panier</h3>
+                <button class="cart-close" id="cart-close">✕ Fermer</button>
+            </div>
+
+            <div class="cart-items js-cart-items">
+                <!-- Item -->
+            </div>
+
+            <div class="cart-footer js-cart-footer">
+                <div class="subtotal">
+                <span>Subtotal:</span>
+                <strong class="js-subtotal-price">0 DA</strong>
+                </div>
+
+                <a href="chekout.html" class="view-cart">VIEW CART</a>
+                <a href="chekoutInfo.html" class="checkout">CHECKOUT</a>
+            </div>
+        </div>
+    </aside>
+
+    <!--================== LOGIN =============-=====-->
+    <!-- LOGIN SIDEBAR -->
+    <aside class="login-sidebar" id="login-sidebar">
+        <div class="login-header">
+            <h3>Se Connecter</h3>
+            <button class="login-close" id="login-close">✕</button>
+        </div>
+
+        <form class="login-form" id="login-form">
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Entrez votre email" required>
+            </div>
+
+            <!-- Password with show/hide -->
+            <div class="form-group password-group">
+                <label for="password">Mot de passe:</label>
+                <input type="password" id="password" placeholder="Entrez votre mot de passe" required>
+                <button type="button" class="toggle-password" id="toggle-password">
+                    <i class="ri-eye-line"></i>
+                </button>
+            </div>
+
+            <button type="submit" class="login-btn">Se Connecter</button>
+            <p class="login-footer">Pas encore de compte? <a href="signup.html">S'inscrire</a></p>
+        </form>
+    </aside>
+
+    <!--=============== PRODUCT SHEET ===============-->
+    <main class="product-sheet">
+        <section class="product-page container">
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> /
+                <a href="#">robe d'hiver</a> /
+                <span>Robe Ania</span>
+            </div>
+
+            <div class="product-wrapper">
+
+                <!-- Images -->
+                <div class="product-images">
+                    <div class="thumbs">
+                        <img src="" loading="lazy">
+                        <img src="" loading="lazy">
+                        <img src="" loading="lazy">
+                    </div>
+
+                    <div class="main-image">
+                        <img src="" loading="lazy">
+                    </div>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="product-details">
+
+                    <h1 class="product-title">
+                        Robe Ania <span>🤎 🖤</span>
+                    </h1>
+
+                    <p class="product-price"></p>
+
+                    <!-- Colors -->
+                    <div class="product-option">
+                        <span>Color:</span>
+                        <div class="colors">
+                        <span class="color" data-color="Gold" style="background-color: gold;"></span>
+                        <span class="color" data-color="Red" style="background-color: red;"></span>
+                        <span class="color" data-color="Brown" style="background-color: brown;"></span>
+                        <span class="color" data-color="Black" style="background-color: black;"></span>
+                        </div>
+                    </div>
+
+                    <!-- Size -->
+                    <div class="product-option">
+                        <span>Size:</span>
+                        <select>
+                        <option>Choose an option</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                        </select>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div class="product-actions">
+                        <div class="quantity">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                        </div>
+
+                        <button class="btn add-cart">ADD TO CART</button>
+                        <button class="btn buy-now">ACHETER MAINTENANT</button>
+                    </div>
+
+                    <!-- Meta -->
+                    <div class="product-meta">
+                        <p><strong>SKU:</strong> N/A</p>
+                        <p><strong>Category:</strong> robe d'hiver</p>
+                    </div>
+
+                    <!-- Share -->
+                    <div class="share">
+                        <span>Partager:</span>
+                        <i class="ri-facebook-fill"></i>
+                        <i class="ri-twitter-x-line"></i>
+                        <i class="ri-pinterest-fill"></i>
+                        <i class="ri-linkedin-fill"></i>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>  
+    
+    <!--=============== JS ===============-->
+    <script src="sidebar/sidebarLogin.js" defer></script>
+    <script src="sidebar/cartside.js" defer></script>
+    <script src="sidebar/sidebar.js" defer></script>
+    <script type="module" src="product/product.js"></script>
+</body>
+</html>
